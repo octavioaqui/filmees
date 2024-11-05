@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Plataforma de Filmes Disney</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .video-player {
+            width: 100%;
+            height: 400px;
+            background-color: #000;
+            margin-bottom: 20px;
+        }
+        .movie-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .movie-item {
+            background-color: #fff;
+            padding: 10px;
+            margin: 10px;
+            width: 220px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .movie-item:hover {
+            transform: scale(1.05);
+        }
+        .movie-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .movie-item p {
+            margin: 10px 0 0;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Plataforma de Filmes Disney</h1>
+    <p>Assista aos filmes clássicos e novos da Disney!</p>
+</header>
+
+<div class="container">
+
+    <!-- Reprodutor de Vídeo -->
+    <div class="video-player">
+        <video id="video-player" controls>
+            <source src="seu-video.mp4" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+        </video>
+    </div>
+
+    <!-- Lista de Filmes Disney -->
+    <div class="movie-list">
+        <!-- Filme 1: O Rei Leão -->
+        <div class="movie-item" onclick="changeVideo('rei-leao.mp4', 'O Rei Leão')">
+            <img src="https://upload.wikimedia.org/wikipedia/pt/a/a0/The_Lion_King_2019_poster.jpg" alt="O Rei Leão">
+            <p>O Rei Leão</p>
+        </div>
+
+        <!-- Filme 2: Aladdin -->
+        <div class="movie-item" onclick="changeVideo('aladdin.mp4', 'Aladdin')">
+            <img src="https://upload.wikimedia.org/wikipedia/pt/5/56/Aladdin_2019_filme.jpg" alt="Aladdin">
+            <p>Aladdin</p>
+        </div>
+
+        <!-- Filme 3: Frozen -->
+        <div class="movie-item" onclick="changeVideo('frozen.mp4', 'Frozen - Uma Aventura Congelante')">
+            <img src="https://upload.wikimedia.org/wikipedia/pt/0/0f/Frozen_II_poster.jpg" alt="Frozen">
+            <p>Frozen - Uma Aventura Congelante</p>
+        </div>
+
+        <!-- Filme 4: Moana -->
+        <div class="movie-item" onclick="changeVideo('moana.mp4', 'Moana: Um Mar de Aventuras')">
+            <img src="https://upload.wikimedia.org/wikipedia/pt/1/1b/Moana_film_poster.jpg" alt="Moana">
+            <p>Moana: Um Mar de Aventuras</p>
+        </div>
+
+        <!-- Filme 5: A Bela e a Fera -->
+        <div class="movie-item" onclick="changeVideo('bela-e-a-fera.mp4', 'A Bela e a Fera')">
+            <img src="https://upload.wikimedia.org/wikipedia/pt/a/aa/Beauty_and_the_Beast_2017_poster.jpg" alt="A Bela e a Fera">
+            <p>A Bela e a Fera</p>
+        </div>
+
+        <!-- Filme 6: Toy Story 4 -->
+        <div class="movie-item" onclick="changeVideo('toy-story-4.mp4', 'Toy Story 4')">
+            <img src="https://upload.wikimedia.org/wikipedia/pt/5/58/Toy_Story_4_-_Poster.png" alt="Toy Story 4">
+            <p>Toy Story 4</p>
+        </div>
+
+        <!-- Filme 7: Cinderela -->
+        <div class="movie-item" onclick="changeVideo('cinderela.mp4', 'Cinderela')">
+            <img src="https://upload.wikimedia.org/wikipedia/pt/e/ea/Cinderella_2015.jpg" alt="Cinderela">
+            <p>Cinderela</p>
+        </div>
+
+        <!-- Filme 8: Enrolados -->
+        <div class="movie-item" onclick="changeVideo('enrolados.mp4', 'Enrolados')">
+            <img src="https://upload.wikimedia.org/wikipedia/pt/d/d2/Tangled_poster.jpg" alt="Enrolados">
+            <p>Enrolados</p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function changeVideo(videoFile, videoTitle) {
+        // Atualiza o vídeo no player
+        const videoPlayer = document.getElementById('video-player');
+        videoPlayer.src = videoFile;
+        videoPlayer.play();
+        
+        // Atualiza o título da página
+        document.title = videoTitle + " - Plataforma de Filmes Disney";
+    }
+</script>
+
+</body>
+</html>
+
